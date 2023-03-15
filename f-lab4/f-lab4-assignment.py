@@ -13,6 +13,7 @@ from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor
 
 
 def measuring_time(func):
+    # 코루틴 체크 하는 함수
     if iscoroutinefunction(func):
 
         async def wrapps():
@@ -61,8 +62,6 @@ def cpu_bound_for_loop():
 
 @measuring_time
 def cpu_bound_multi_thread():
-    result = 0
-
     with ThreadPoolExecutor(max_workers=min(10, len(NUMBERS))) as executor:
         result = executor.map(cpu_bound, NUMBERS)
 
@@ -71,8 +70,6 @@ def cpu_bound_multi_thread():
 
 @measuring_time
 def cpu_bound_multi_process():
-    result = 0
-
     with ProcessPoolExecutor(max_workers=min(10, len(NUMBERS))) as executor:
         result = executor.map(cpu_bound, NUMBERS)
 
