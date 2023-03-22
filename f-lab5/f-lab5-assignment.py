@@ -11,6 +11,7 @@ NUM_ITERATION = 10
 SAMPLE_UUID = "a25bbf18-29ac-4e7b-b3c7-df747d55fbf4"
 
 
+# 비동기 함수에 사용
 async def get_uuid_async(session):
     async with session.get(URL) as response:
         uuid = await response.json()
@@ -58,6 +59,8 @@ def io_bound_multi_process():
 @measuring_time
 async def io_bound_asyncio():
     uuids = []
+
+    # sessing 안되서 비동기 aiohttp 모듈을 사용
     async with aiohttp.ClientSession() as session:
         tasks = [
             asyncio.ensure_future(get_uuid_async(session=session))
