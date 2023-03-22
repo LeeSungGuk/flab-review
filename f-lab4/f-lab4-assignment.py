@@ -72,7 +72,6 @@ def cpu_bound_multi_thread():
 def cpu_bound_multi_process():
     with ProcessPoolExecutor(max_workers=min(10, len(NUMBERS))) as executor:
         result = executor.map(cpu_bound, NUMBERS)
-
     return sum(list(result))
 
 
