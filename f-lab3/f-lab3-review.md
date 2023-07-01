@@ -69,4 +69,4 @@ UTF-8은 바이트 지향 인코딩입니다. 인코딩은 각 문자가 하나 
 
 ## 이터레이터와 제너레이터
 
-[colab 이터레이터, 제너레이터 ](https://colab.research.google.com/drive/1uk0QmeHLzZjCzeo3Pht5_kWOsTZAP-qz?usp=sharing)
+[colab 이터레이터, 제너레이터](https://colab.research.google.com/drive/1uk0QmeHLzZjCzeo3Pht5_kWOsTZAP-qz?usp=sharing)
